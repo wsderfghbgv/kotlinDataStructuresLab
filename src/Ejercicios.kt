@@ -253,3 +253,22 @@ fun reto16() {
     println("Sensores tras quitar mÃƒÂºltiplos de 3: $sensores")
 }
 
+// --- Reto 17: Matriz 4x4 Ã¢â‚¬â€ suma diagonal principal y secundaria ---
+fun reto17() {
+    println("=== Reto 17: Mapa de almacÃƒÂ©n (matriz 4x4) ===")
+    val m = arrayOf(
+        intArrayOf(1, 2, 3, 4),
+        intArrayOf(5, 6, 7, 8),
+        intArrayOf(9, 10, 11, 12),
+        intArrayOf(13, 14, 15, 16)
+    )
+    var principal = 0
+    var secundaria = 0
+    val n = 4
+    for (i in 0 until n) {
+        principal += m[i][i]
+        secundaria += m[i][n - 1 - i]
+    }
+    println("Suma diagonal principal: $principal | secundaria: $secundaria")
+}
+
