@@ -215,3 +215,13 @@ fun reto13() {
     println("Misma idea con chunked: ${conChunked.size} lotes")
 }
 
+// --- Reto 14: Primer ID de error que solo aparece una vez ---
+fun reto14() {
+    println("=== Reto 14: Identificador de ticket ÃƒÂºnico ===")
+    val tickets = listOf("E404", "E500", "E404", "E302", "E500", "E302", "E418")
+    val freq = mutableMapOf<String, Int>()
+    for (t in tickets) freq[t] = (freq[t] ?: 0) + 1
+    val primeroUnico = tickets.firstOrNull { freq[it] == 1 }
+    println("Primer ID que aparece solo una vez: $primeroUnico")
+}
+
