@@ -429,3 +429,24 @@ fun reto25() {
     println("Promedio sin outlier rÃƒÂ¡pido/lento: $promedioReal (resto: $l)")
 }
 
+// --- Reto 26: CompresiÃƒÂ³n de logs (runs) a pares (estado, cantidad) ---
+fun reto26() {
+    println("=== Reto 26: CompresiÃƒÂ³n de logs de servidor ===")
+    val estados = listOf("UP", "UP", "UP", "DOWN", "DOWN", "UP", "UP")
+    val resumen = mutableListOf<Pair<String, Int>>()
+    if (estados.isNotEmpty()) {
+        var actual = estados[0]
+        var cnt = 1
+        for (i in 1 until estados.size) {
+            if (estados[i] == actual) cnt++
+            else {
+                resumen.add(actual to cnt)
+                actual = estados[i]
+                cnt = 1
+            }
+        }
+        resumen.add(actual to cnt)
+    }
+    println("Resumen: $resumen")
+}
+
