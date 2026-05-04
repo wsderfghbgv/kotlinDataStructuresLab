@@ -496,3 +496,22 @@ fun reto29() {
     println("Objetivo $objetivo kg -> pareja: $pareja")
 }
 
+// --- Reto 30: EstanterÃƒÂ­a 3x2 transpuesta a 2x3 ---
+fun reto30() {
+    println("=== Reto 30: Espejo de layout de tienda (transpuesta) ===")
+    val estanteria = arrayOf(
+        arrayOf("A1", "A2"),
+        arrayOf("B1", "B2"),
+        arrayOf("C1", "C2")
+    )
+    val filas = estanteria.size
+    val cols = estanteria[0].size
+    val transpuesta = Array(cols) { Array(filas) { "" } }
+    for (i in 0 until filas) {
+        for (j in 0 until cols) {
+            transpuesta[j][i] = estanteria[i][j]
+        }
+    }
+    println("Original 3x2: ${estanteria.joinToString { it.contentToString() }}")
+    println("Transpuesta 2x3: ${transpuesta.joinToString { it.contentToString() }}")
+}

@@ -31,4 +31,5 @@ fun main() {
     reto27()
     reto28()
     reto29()
+    reto30()
 }
