@@ -225,3 +225,19 @@ fun reto14() {
     println("Primer ID que aparece solo una vez: $primeroUnico")
 }
 
+// --- Reto 15: Lista de precios de productos -> mapa con IVA 19 % solo si precio > 50_000 ---
+fun reto15() {
+    println("=== Reto 15: Calculadora de IVA selectiva ===")
+    val listaPrecios = listOf(
+        "arroz" to 12000.0,
+        "laptop" to 120000.0,
+        "jabÃƒÂ³n" to 3500.0,
+        "nevera" to 890000.0
+    )
+    val conIva = mutableMapOf<String, Double>()
+    for ((prod, precio) in listaPrecios) {
+        conIva[prod] = if (precio > 50_000) precio * 1.19 else precio
+    }
+    println("Precios con IVA selectivo: $conIva")
+}
+
