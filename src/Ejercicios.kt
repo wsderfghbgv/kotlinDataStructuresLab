@@ -342,3 +342,22 @@ fun reto21() {
     println("Pisos con mantenimiento especial (${mantenimiento.size}): primeros 15 -> ${mantenimiento.take(15)}...")
 }
 
+// --- Reto 22: Pila de platos (LIFO) con lista ---
+fun reto22() {
+    println("=== Reto 22: Pila de platos sucios ===")
+    val pila = mutableListOf<String>()
+    fun push(plato: String) {
+        pila.add(plato)
+    }
+    fun pop(): String? {
+        if (pila.isEmpty()) return null
+        return pila.removeAt(pila.lastIndex)
+    }
+    push("plato1")
+    push("plato2")
+    push("plato3")
+    println("Lavar: ${pop()} (tope)")
+    println("Lavar: ${pop()}")
+    println("Quedan en pila: $pila")
+}
+
