@@ -197,3 +197,21 @@ fun reto12() {
     println("Ruta espejo: $espejo (ruta=$ruta)")
 }
 
+// --- Reto 13: 50 paquetes en lotes de 10 (bucle manual; tambiÃƒÂ©n chunked) ---
+fun reto13() {
+    println("=== Reto 13: Reparto de pedidos por camiÃƒÂ³n ===")
+    val paquetes = (1..50).map { "P$it" }
+    val camiones = mutableListOf<List<String>>()
+    var i = 0
+    while (i < paquetes.size) {
+        val fin = minOf(i + 10, paquetes.size)
+        val lote = mutableListOf<String>()
+        for (j in i until fin) lote.add(paquetes[j])
+        camiones.add(lote)
+        i = fin
+    }
+    println("Camiones: ${camiones.size} | Paquetes camiÃƒÂ³n 1: ${camiones[0].size} (${camiones[0].first()}..${camiones[0].last()})")
+    val conChunked = paquetes.chunked(10)
+    println("Misma idea con chunked: ${conChunked.size} lotes")
+}
+
