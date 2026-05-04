@@ -283,3 +283,25 @@ fun reto18() {
     println("Lista de compras fusionada: $fusion")
 }
 
+// --- Reto 19: Orden manual apps por estrellas (mayor a menor), Top 10 ---
+fun reto19() {
+    println("=== Reto 19: Ranking de apps por calificaciÃƒÂ³n ===")
+    val apps = mutableListOf(
+        "AppA" to 4.2, "AppB" to 4.9, "AppC" to 3.1, "AppD" to 4.8,
+        "AppE" to 4.0, "AppF" to 5.0, "AppG" to 3.5, "AppH" to 4.6,
+        "AppI" to 3.9, "AppJ" to 4.4, "AppK" to 2.8, "AppL" to 4.7
+    )
+    // ordenaciÃƒÂ³n manual (bubble por estrellas descendente)
+    for (i in apps.indices) {
+        for (j in 0 until apps.size - 1 - i) {
+            if (apps[j].second < apps[j + 1].second) {
+                val tmp = apps[j]
+                apps[j] = apps[j + 1]
+                apps[j + 1] = tmp
+            }
+        }
+    }
+    val top10 = apps.take(10)
+    println("Top 10 tienda: $top10")
+}
+
