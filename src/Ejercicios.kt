@@ -400,3 +400,32 @@ fun reto24() {
     println("(() -> ${balanceado("(()")}")
 }
 
+// --- Reto 25: MaratÃƒÂ³n Ã¢â‚¬â€ quitar mejor y peor tiempo, promedio del resto ---
+fun reto25() {
+    println("=== Reto 25: Rendimiento de maratÃƒÂ³n ===")
+    val tiemposMin = mutableListOf(42.0, 40.5, 41.2, 39.8, 43.1, 41.0)
+    if (tiemposMin.size <= 2) {
+        println("No hay suficientes tiempos para quitar outliers.")
+        return
+    }
+    var mejorIdx = 0
+    var peorIdx = 0
+    for (idx in tiemposMin.indices) {
+        if (tiemposMin[idx] < tiemposMin[mejorIdx]) mejorIdx = idx
+        if (tiemposMin[idx] > tiemposMin[peorIdx]) peorIdx = idx
+    }
+    val l = tiemposMin.toMutableList()
+    if (mejorIdx == peorIdx) {
+        l.removeAt(mejorIdx)
+    } else {
+        val primero = maxOf(mejorIdx, peorIdx)
+        val segundo = minOf(mejorIdx, peorIdx)
+        l.removeAt(primero)
+        l.removeAt(segundo)
+    }
+    var suma = 0.0
+    for (t in l) suma += t
+    val promedioReal = suma / l.size
+    println("Promedio sin outlier rÃƒÂ¡pido/lento: $promedioReal (resto: $l)")
+}
+
