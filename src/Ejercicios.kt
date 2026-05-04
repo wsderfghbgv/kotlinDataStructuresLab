@@ -152,3 +152,18 @@ fun reto9() {
     }
 }
 
+// --- Reto 10: Rotar lista de 7 empleados k posiciones ---
+fun reto10(k: Int = 2) {
+    println("=== Reto 10: RotaciÃƒÂ³n de turnos (k=$k) ===")
+    val empleados = listOf("E1", "E2", "E3", "E4", "E5", "E6", "E7")
+    val n = empleados.size
+    if (n == 0) {
+        println("Lista vacÃƒÂ­a.")
+        return
+    }
+    val offset = ((k % n) + n) % n
+    val rotados = empleados.drop(offset) + empleados.take(offset)
+    println("Orden original: $empleados")
+    println("Tras rotar:    $rotados")
+}
+
