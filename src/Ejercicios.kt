@@ -321,3 +321,24 @@ fun reto20() {
     println("Lista maestra ordenada: $fusion")
 }
 
+// --- Reto 21: Pisos 1..100 primos con Array de marcadores ---
+fun reto21() {
+    println("=== Reto 21: DÃƒÂ­as de mantenimiento (pisos primos) ===")
+    val esPrimo = Array(101) { false }
+    for (piso in 2..100) {
+        var primo = true
+        var d = 2
+        while (d * d <= piso) {
+            if (piso % d == 0) {
+                primo = false
+                break
+            }
+            d++
+        }
+        if (piso >= 2 && primo) esPrimo[piso] = true
+    }
+    val mantenimiento = mutableListOf<Int>()
+    for (p in 1..100) if (esPrimo[p]) mantenimiento.add(p)
+    println("Pisos con mantenimiento especial (${mantenimiento.size}): primeros 15 -> ${mantenimiento.take(15)}...")
+}
+
