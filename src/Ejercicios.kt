@@ -1,4 +1,4 @@
-/**
+
  * Soluciones de retos — lógica de la actividad.
  * Cada función demuestra una estructura o algoritmo distinto.
 
@@ -304,7 +304,7 @@ fun reto19() {
     val top10 = apps.take(10)
     println("Top 10 tienda: $top10")
 }
-*/
+
 // --- Reto 20: Unir dos listas ordenadas sin .sort() ---
 fun reto20() {
     println("=== Reto 20: Unión de agendas ordenadas ===")
@@ -320,7 +320,7 @@ fun reto20() {
     while (j < b.size) fusion.add(b[j++])
     println("Lista maestra ordenada: $fusion")
 }
-/**
+
 // --- Reto 21: Pisos 1..100 primos con Array de marcadores ---
 fun reto21() {
     println("=== Reto 21: Días de mantenimiento (pisos primos) ===")
@@ -515,4 +515,3 @@ fun reto30() {
     println("Original 3x2: ${estanteria.joinToString { it.contentToString() }}")
     println("Transpuesta 2x3: ${transpuesta.joinToString { it.contentToString() }}")
 }
-*/
