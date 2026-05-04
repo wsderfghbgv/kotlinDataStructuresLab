@@ -464,3 +464,18 @@ fun reto27() {
     println("Promedio equipo: $promedio | Bonificados: $bonificados")
 }
 
+// --- Reto 28: Tarifas parking 1..10 h, consulta rÃƒÂ¡pida de costo total ---
+fun reto28() {
+    println("=== Reto 28: Calculadora de tarifas de parking ===")
+    val tarifaPorHora = doubleArrayOf(2000.0, 2500.0, 3000.0, 3000.0, 3500.0, 3500.0, 4000.0, 4000.0, 4500.0, 5000.0)
+    val acumulado = DoubleArray(11)
+    for (h in 1..10) {
+        acumulado[h] = acumulado[h - 1] + tarifaPorHora[h - 1]
+    }
+    fun costoTotal(horas: Int): Double {
+        if (horas < 1 || horas > 10) return -1.0
+        return acumulado[horas]
+    }
+    println("Costo 3 h: ${costoTotal(3)} | Costo 10 h: ${costoTotal(10)}")
+}
+
