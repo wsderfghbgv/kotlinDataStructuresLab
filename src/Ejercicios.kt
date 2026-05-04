@@ -361,3 +361,22 @@ fun reto22() {
     println("Quedan en pila: $pila")
 }
 
+// --- Reto 23: CalorÃƒÂ­as hoy vs promedio de dÃƒÂ­as anteriores ---
+fun reto23() {
+    println("=== Reto 23: Seguimiento de dieta ===")
+    val calorias = listOf(2000, 2100, 1900, 2200, 2050)
+    val diferencias = mutableListOf<Double>()
+    for (dia in calorias.indices) {
+        if (dia == 0) {
+            diferencias.add(0.0)
+            continue
+        }
+        var suma = 0.0
+        for (k in 0 until dia) suma += calorias[k]
+        val promedioPrev = suma / dia
+        diferencias.add(calorias[dia] - promedioPrev)
+    }
+    println("CalorÃƒÂ­as por dÃƒÂ­a: $calorias")
+    println("Diferencia vs promedio previo: $diferencias")
+}
+
