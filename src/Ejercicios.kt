@@ -54,3 +54,14 @@ fun reto3() {
     println("Agenda sin duplicados (${unicosOrdenados.size}): $unicosOrdenados")
 }
 
+// --- Reto 4: Carrito -> Map producto -> cantidad ---
+fun reto4() {
+    println("=== Reto 4: AnÃƒÂ¡lisis de carrito de compras ===")
+    val carrito = listOf("leche", "pan", "leche", "huevos", "pan", "leche", "arroz")
+    val conteo = mutableMapOf<String, Int>()
+    for (producto in carrito) {
+        conteo[producto] = (conteo[producto] ?: 0) + 1
+    }
+    println("Unidades por producto: $conteo")
+}
+
