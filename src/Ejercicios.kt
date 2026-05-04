@@ -23,3 +23,20 @@ fun reto1() {
     println("Total: $total | Promedio diario: $promedio | Mayor: $maximo | Menor: $minimo")
 }
 
+// --- Reto 2: Empleados senior (mayÃƒÂºsculas, edad > 30) ---
+fun reto2() {
+    println("=== Reto 2: Filtro de empleados senior ===")
+    val empleados = listOf(
+        "Ana" to 28,
+        "Luis" to 35,
+        "Marta" to 42,
+        "Pedro" to 29,
+        "SofÃƒÂ­a" to 31
+    )
+    val nombresSenior = mutableListOf<String>()
+    for ((nombre, edad) in empleados) {
+        if (edad > 30) nombresSenior.add(nombre.uppercase())
+    }
+    println("Nombres para capacitaciÃƒÂ³n especial: $nombresSenior")
+}
+
