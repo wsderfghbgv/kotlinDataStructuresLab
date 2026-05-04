@@ -241,3 +241,15 @@ fun reto15() {
     println("Precios con IVA selectivo: $conIva")
 }
 
+// --- Reto 16: Quitar sensores cuyo ID es mÃƒÂºltiplo de 3 ---
+fun reto16() {
+    println("=== Reto 16: Mantenimiento de sensores ===")
+    val sensores = mutableListOf(101, 102, 103, 104, 105, 106, 107, 108, 109)
+    val iter = sensores.iterator()
+    while (iter.hasNext()) {
+        val id = iter.next()
+        if (id % 3 == 0) iter.remove()
+    }
+    println("Sensores tras quitar mÃƒÂºltiplos de 3: $sensores")
+}
+
