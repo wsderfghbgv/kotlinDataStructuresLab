@@ -1,7 +1,7 @@
 /**
- * Soluciones de retos Ã¢â‚¬â€ lÃƒÂ³gica de la actividad.
- * Cada funciÃƒÂ³n demuestra una estructura o algoritmo distinto.
- */
+ * Soluciones de retos — lógica de la actividad.
+ * Cada función demuestra una estructura o algoritmo distinto.
+
 
 // --- Reto 1: Control de gastos diarios (sin usar .sum()) ---
 fun reto1() {
@@ -23,7 +23,7 @@ fun reto1() {
     println("Total: $total | Promedio diario: $promedio | Mayor: $maximo | Menor: $minimo")
 }
 
-// --- Reto 2: Empleados senior (mayÃƒÂºsculas, edad > 30) ---
+// --- Reto 2: Empleados senior (mayúsculas, edad > 30) ---
 fun reto2() {
     println("=== Reto 2: Filtro de empleados senior ===")
     val empleados = listOf(
@@ -31,16 +31,16 @@ fun reto2() {
         "Luis" to 35,
         "Marta" to 42,
         "Pedro" to 29,
-        "SofÃƒÂ­a" to 31
+        "Sofía" to 31
     )
     val nombresSenior = mutableListOf<String>()
     for ((nombre, edad) in empleados) {
         if (edad > 30) nombresSenior.add(nombre.uppercase())
     }
-    println("Nombres para capacitaciÃƒÂ³n especial: $nombresSenior")
+    println("Nombres para capacitación especial: $nombresSenior")
 }
 
-// --- Reto 3: Contactos ÃƒÂºnicos con Set, ordenados ---
+// --- Reto 3: Contactos únicos con Set, ordenados ---
 fun reto3() {
     println("=== Reto 3: Limpieza de contactos duplicados ===")
     val telefonos = listOf(
@@ -56,7 +56,7 @@ fun reto3() {
 
 // --- Reto 4: Carrito -> Map producto -> cantidad ---
 fun reto4() {
-    println("=== Reto 4: AnÃƒÂ¡lisis de carrito de compras ===")
+    println("=== Reto 4: Análisis de carrito de compras ===")
     val carrito = listOf("leche", "pan", "leche", "huevos", "pan", "leche", "arroz")
     val conteo = mutableMapOf<String, Int>()
     for (producto in carrito) {
@@ -67,7 +67,7 @@ fun reto4() {
 
 // --- Reto 5: Invertir Array de URLs manualmente ---
 fun reto5() {
-    println("=== Reto 5: Historial de navegaciÃƒÂ³n reversible ===")
+    println("=== Reto 5: Historial de navegación reversible ===")
     val urls = arrayOf(
         "https://a.com",
         "https://b.com",
@@ -82,17 +82,17 @@ fun reto5() {
         urls[i] = urls[j]
         urls[j] = tmp
     }
-    println("Historial invertido (simula \"AtrÃƒÂ¡s\" al recorrer): ${urls.joinToString()}")
+    println("Historial invertido (simula \"Atrás\" al recorrer): ${urls.joinToString()}")
 }
 
-// --- Reto 6: Intereses en comÃƒÂºn y exclusivos del primero ---
+// --- Reto 6: Intereses en común y exclusivos del primero ---
 fun reto6() {
     println("=== Reto 6: Compatibilidad de intereses ===")
-    val interesesA = setOf("cine", "senderismo", "cafÃƒÂ©", "lectura")
-    val interesesB = setOf("yoga", "cafÃƒÂ©", "cine", "viajes")
+    val interesesA = setOf("cine", "senderismo", "café", "lectura")
+    val interesesB = setOf("yoga", "café", "cine", "viajes")
     val compartidos = interesesA intersect interesesB
     val soloA = interesesA subtract interesesB
-    println("En comÃƒÂºn: $compartidos | Solo la primera persona: $soloA")
+    println("En común: $compartidos | Solo la primera persona: $soloA")
 }
 
 // --- Reto 7: Despensa MutableMap: consumir y eliminar si agota ---
@@ -113,7 +113,7 @@ fun reto7() {
             restante > 0 -> despensa[producto] = restante
             restante == 0 -> {
                 despensa.remove(producto)
-                println("Alerta: \"$producto\" se agotÃƒÂ³ y se quitÃƒÂ³ del mapa.")
+                println("Alerta: \"$producto\" se agotó y se quitó del mapa.")
             }
             else -> println("Alerta: no hay suficiente \"$producto\" (hay $actual, pediste $cantidad).")
         }
@@ -126,7 +126,7 @@ fun reto7() {
 
 // --- Reto 8: Promedio ponderado con Pair<nota, peso> ---
 fun reto8() {
-    println("=== Reto 8: CÃƒÂ¡lculo de promedio acadÃƒÂ©mico ===")
+    println("=== Reto 8: Cálculo de promedio académico ===")
     val items = listOf(
         4.5 to 0.3,
         3.8 to 0.2,
@@ -139,26 +139,26 @@ fun reto8() {
     println("Nota final ponderada: $notaFinal")
 }
 
-// --- Reto 9: Map ISO -> paÃƒÂ­s, mensaje por cada entrada ---
+// --- Reto 9: Map ISO -> país, mensaje por cada entrada ---
 fun reto9() {
-    println("=== Reto 9: Traductor de cÃƒÂ³digos de paÃƒÂ­s ===")
+    println("=== Reto 9: Traductor de códigos de país ===")
     val codigos = mapOf(
         "CO" to "Colombia",
-        "MX" to "MÃƒÂ©xico",
+        "MX" to "México",
         "AR" to "Argentina"
     )
     for ((iso, pais) in codigos) {
-        println("El cÃƒÂ³digo $iso pertenece a $pais")
+        println("El código $iso pertenece a $pais")
     }
 }
 
 // --- Reto 10: Rotar lista de 7 empleados k posiciones ---
 fun reto10(k: Int = 2) {
-    println("=== Reto 10: RotaciÃƒÂ³n de turnos (k=$k) ===")
+    println("=== Reto 10: Rotación de turnos (k=$k) ===")
     val empleados = listOf("E1", "E2", "E3", "E4", "E5", "E6", "E7")
     val n = empleados.size
     if (n == 0) {
-        println("Lista vacÃƒÂ­a.")
+        println("Lista vacía.")
         return
     }
     val offset = ((k % n) + n) % n
@@ -171,7 +171,7 @@ fun reto10(k: Int = 2) {
 fun reto11() {
     println("=== Reto 11: Organizador de maleta ===")
     val objetos = listOf(
-        "camisa" to 1, "pantalÃƒÂ³n" to 2, "cepillo" to 1,
+        "camisa" to 1, "pantalón" to 2, "cepillo" to 1,
         "libro" to 2, "cargador" to 1, "jersey" to 3,
         "zapatos" to 3, "agua" to 1
     )
@@ -182,7 +182,7 @@ fun reto11() {
     println("Agrupado por kg: $porPeso")
 }
 
-// --- Reto 12: Ruta espejo (palÃƒÂ­ndromo de coordenadas) ---
+// --- Reto 12: Ruta espejo (palíndromo de coordenadas) ---
 fun reto12() {
     println("=== Reto 12: Verificador de ruta reversible ===")
     val ruta = listOf(0 to 0, 1 to 1, 2 to 2, 1 to 1, 0 to 0)
@@ -197,9 +197,9 @@ fun reto12() {
     println("Ruta espejo: $espejo (ruta=$ruta)")
 }
 
-// --- Reto 13: 50 paquetes en lotes de 10 (bucle manual; tambiÃƒÂ©n chunked) ---
+// --- Reto 13: 50 paquetes en lotes de 10 (bucle manual; también chunked) ---
 fun reto13() {
-    println("=== Reto 13: Reparto de pedidos por camiÃƒÂ³n ===")
+    println("=== Reto 13: Reparto de pedidos por camión ===")
     val paquetes = (1..50).map { "P$it" }
     val camiones = mutableListOf<List<String>>()
     var i = 0
@@ -210,14 +210,14 @@ fun reto13() {
         camiones.add(lote)
         i = fin
     }
-    println("Camiones: ${camiones.size} | Paquetes camiÃƒÂ³n 1: ${camiones[0].size} (${camiones[0].first()}..${camiones[0].last()})")
+    println("Camiones: ${camiones.size} | Paquetes camión 1: ${camiones[0].size} (${camiones[0].first()}..${camiones[0].last()})")
     val conChunked = paquetes.chunked(10)
     println("Misma idea con chunked: ${conChunked.size} lotes")
 }
 
 // --- Reto 14: Primer ID de error que solo aparece una vez ---
 fun reto14() {
-    println("=== Reto 14: Identificador de ticket ÃƒÂºnico ===")
+    println("=== Reto 14: Identificador de ticket único ===")
     val tickets = listOf("E404", "E500", "E404", "E302", "E500", "E302", "E418")
     val freq = mutableMapOf<String, Int>()
     for (t in tickets) freq[t] = (freq[t] ?: 0) + 1
@@ -231,7 +231,7 @@ fun reto15() {
     val listaPrecios = listOf(
         "arroz" to 12000.0,
         "laptop" to 120000.0,
-        "jabÃƒÂ³n" to 3500.0,
+        "jabón" to 3500.0,
         "nevera" to 890000.0
     )
     val conIva = mutableMapOf<String, Double>()
@@ -241,7 +241,7 @@ fun reto15() {
     println("Precios con IVA selectivo: $conIva")
 }
 
-// --- Reto 16: Quitar sensores cuyo ID es mÃƒÂºltiplo de 3 ---
+// --- Reto 16: Quitar sensores cuyo ID es múltiplo de 3 ---
 fun reto16() {
     println("=== Reto 16: Mantenimiento de sensores ===")
     val sensores = mutableListOf(101, 102, 103, 104, 105, 106, 107, 108, 109)
@@ -250,12 +250,12 @@ fun reto16() {
         val id = iter.next()
         if (id % 3 == 0) iter.remove()
     }
-    println("Sensores tras quitar mÃƒÂºltiplos de 3: $sensores")
+    println("Sensores tras quitar múltiplos de 3: $sensores")
 }
 
-// --- Reto 17: Matriz 4x4 Ã¢â‚¬â€ suma diagonal principal y secundaria ---
+// --- Reto 17: Matriz 4x4 — suma diagonal principal y secundaria ---
 fun reto17() {
-    println("=== Reto 17: Mapa de almacÃƒÂ©n (matriz 4x4) ===")
+    println("=== Reto 17: Mapa de almacén (matriz 4x4) ===")
     val m = arrayOf(
         intArrayOf(1, 2, 3, 4),
         intArrayOf(5, 6, 7, 8),
@@ -272,11 +272,11 @@ fun reto17() {
     println("Suma diagonal principal: $principal | secundaria: $secundaria")
 }
 
-// --- Reto 18: FusiÃƒÂ³n de dos Map<String, Double> (sumar comunes) ---
+// --- Reto 18: Fusión de dos Map<String, Double> (sumar comunes) ---
 fun reto18() {
-    println("=== Reto 18: FusiÃƒÂ³n de recetas ===")
+    println("=== Reto 18: Fusión de recetas ===")
     val chefA = mapOf("harina" to 500.0, "huevos" to 3.0, "leche" to 200.0)
-    val chefB = mapOf("huevos" to 2.0, "azÃƒÂºcar" to 100.0, "harina" to 250.0)
+    val chefB = mapOf("huevos" to 2.0, "azúcar" to 100.0, "harina" to 250.0)
     val fusion = mutableMapOf<String, Double>()
     for ((k, v) in chefA) fusion[k] = v
     for ((k, v) in chefB) fusion[k] = (fusion[k] ?: 0.0) + v
@@ -285,13 +285,13 @@ fun reto18() {
 
 // --- Reto 19: Orden manual apps por estrellas (mayor a menor), Top 10 ---
 fun reto19() {
-    println("=== Reto 19: Ranking de apps por calificaciÃƒÂ³n ===")
+    println("=== Reto 19: Ranking de apps por calificación ===")
     val apps = mutableListOf(
         "AppA" to 4.2, "AppB" to 4.9, "AppC" to 3.1, "AppD" to 4.8,
         "AppE" to 4.0, "AppF" to 5.0, "AppG" to 3.5, "AppH" to 4.6,
         "AppI" to 3.9, "AppJ" to 4.4, "AppK" to 2.8, "AppL" to 4.7
     )
-    // ordenaciÃƒÂ³n manual (bubble por estrellas descendente)
+    // ordenación manual (bubble por estrellas descendente)
     for (i in apps.indices) {
         for (j in 0 until apps.size - 1 - i) {
             if (apps[j].second < apps[j + 1].second) {
@@ -304,10 +304,10 @@ fun reto19() {
     val top10 = apps.take(10)
     println("Top 10 tienda: $top10")
 }
-
+*/
 // --- Reto 20: Unir dos listas ordenadas sin .sort() ---
 fun reto20() {
-    println("=== Reto 20: UniÃƒÂ³n de agendas ordenadas ===")
+    println("=== Reto 20: Unión de agendas ordenadas ===")
     val a = listOf("Ana", "Carlos", "Elena")
     val b = listOf("Beatriz", "David", "Fernanda", "Gloria")
     val fusion = mutableListOf<String>()
@@ -320,10 +320,10 @@ fun reto20() {
     while (j < b.size) fusion.add(b[j++])
     println("Lista maestra ordenada: $fusion")
 }
-
+/**
 // --- Reto 21: Pisos 1..100 primos con Array de marcadores ---
 fun reto21() {
-    println("=== Reto 21: DÃƒÂ­as de mantenimiento (pisos primos) ===")
+    println("=== Reto 21: Días de mantenimiento (pisos primos) ===")
     val esPrimo = Array(101) { false }
     for (piso in 2..100) {
         var primo = true
@@ -361,7 +361,7 @@ fun reto22() {
     println("Quedan en pila: $pila")
 }
 
-// --- Reto 23: CalorÃƒÂ­as hoy vs promedio de dÃƒÂ­as anteriores ---
+// --- Reto 23: Calorías hoy vs promedio de días anteriores ---
 fun reto23() {
     println("=== Reto 23: Seguimiento de dieta ===")
     val calorias = listOf(2000, 2100, 1900, 2200, 2050)
@@ -376,13 +376,13 @@ fun reto23() {
         val promedioPrev = suma / dia
         diferencias.add(calorias[dia] - promedioPrev)
     }
-    println("CalorÃƒÂ­as por dÃƒÂ­a: $calorias")
+    println("Calorías por día: $calorias")
     println("Diferencia vs promedio previo: $diferencias")
 }
 
-// --- Reto 24: ParÃƒÂ©ntesis balanceados en manifiesto ---
+// --- Reto 24: Paréntesis balanceados en manifiesto ---
 fun reto24() {
-    println("=== Reto 24: OrganizaciÃƒÂ³n de contenedores ===")
+    println("=== Reto 24: Organización de contenedores ===")
     fun balanceado(s: String): Boolean {
         var nivel = 0
         for (c in s) {
@@ -400,9 +400,9 @@ fun reto24() {
     println("(() -> ${balanceado("(()")}")
 }
 
-// --- Reto 25: MaratÃƒÂ³n Ã¢â‚¬â€ quitar mejor y peor tiempo, promedio del resto ---
+// --- Reto 25: Maratón — quitar mejor y peor tiempo, promedio del resto ---
 fun reto25() {
-    println("=== Reto 25: Rendimiento de maratÃƒÂ³n ===")
+    println("=== Reto 25: Rendimiento de maratón ===")
     val tiemposMin = mutableListOf(42.0, 40.5, 41.2, 39.8, 43.1, 41.0)
     if (tiemposMin.size <= 2) {
         println("No hay suficientes tiempos para quitar outliers.")
@@ -426,12 +426,12 @@ fun reto25() {
     var suma = 0.0
     for (t in l) suma += t
     val promedioReal = suma / l.size
-    println("Promedio sin outlier rÃƒÂ¡pido/lento: $promedioReal (resto: $l)")
+    println("Promedio sin outlier rápido/lento: $promedioReal (resto: $l)")
 }
 
-// --- Reto 26: CompresiÃƒÂ³n de logs (runs) a pares (estado, cantidad) ---
+// --- Reto 26: Compresión de logs (runs) a pares (estado, cantidad) ---
 fun reto26() {
-    println("=== Reto 26: CompresiÃƒÂ³n de logs de servidor ===")
+    println("=== Reto 26: Compresión de logs de servidor ===")
     val estados = listOf("UP", "UP", "UP", "DOWN", "DOWN", "UP", "UP")
     val resumen = mutableListOf<Pair<String, Int>>()
     if (estados.isNotEmpty()) {
@@ -464,7 +464,7 @@ fun reto27() {
     println("Promedio equipo: $promedio | Bonificados: $bonificados")
 }
 
-// --- Reto 28: Tarifas parking 1..10 h, consulta rÃƒÂ¡pida de costo total ---
+// --- Reto 28: Tarifas parking 1..10 h, consulta rápida de costo total ---
 fun reto28() {
     println("=== Reto 28: Calculadora de tarifas de parking ===")
     val tarifaPorHora = doubleArrayOf(2000.0, 2500.0, 3000.0, 3000.0, 3500.0, 3500.0, 4000.0, 4000.0, 4500.0, 5000.0)
@@ -496,7 +496,7 @@ fun reto29() {
     println("Objetivo $objetivo kg -> pareja: $pareja")
 }
 
-// --- Reto 30: EstanterÃƒÂ­a 3x2 transpuesta a 2x3 ---
+// --- Reto 30: Estantería 3x2 transpuesta a 2x3 ---
 fun reto30() {
     println("=== Reto 30: Espejo de layout de tienda (transpuesta) ===")
     val estanteria = arrayOf(
@@ -515,3 +515,4 @@ fun reto30() {
     println("Original 3x2: ${estanteria.joinToString { it.contentToString() }}")
     println("Transpuesta 2x3: ${transpuesta.joinToString { it.contentToString() }}")
 }
+*/

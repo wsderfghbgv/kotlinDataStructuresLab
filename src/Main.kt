@@ -2,34 +2,7 @@
  * Punto de entrada: solo invoca y prueba las funciones de [Ejercicios.kt].
  */
 fun main() {
-    reto1()
-    reto2()
-    reto3()
-    reto4()
-    reto5()
-    reto6()
-    reto7()
-    reto8()
-    reto9()
-    reto10(k = 2)
-    reto11()
-    reto12()
-    reto13()
-    reto14()
-    reto15()
-    reto16()
-    reto17()
-    reto18()
-    reto19()
+
     reto20()
-    reto21()
-    reto22()
-    reto23()
-    reto24()
-    reto25()
-    reto26()
-    reto27()
-    reto28()
-    reto29()
-    reto30()
+
 }

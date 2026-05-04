@@ -39,4 +39,4 @@
 
 ## Sustentación en video (Loom)
 
-- **Enlace:** []
+- **Enlace:** [https://www.loom.com/share/0a12e4ce3b65424e9038ff318df425b9]
