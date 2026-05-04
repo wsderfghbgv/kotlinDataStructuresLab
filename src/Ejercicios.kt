@@ -182,3 +182,18 @@ fun reto11() {
     println("Agrupado por kg: $porPeso")
 }
 
+// --- Reto 12: Ruta espejo (palÃƒÂ­ndromo de coordenadas) ---
+fun reto12() {
+    println("=== Reto 12: Verificador de ruta reversible ===")
+    val ruta = listOf(0 to 0, 1 to 1, 2 to 2, 1 to 1, 0 to 0)
+    val n = ruta.size
+    var espejo = true
+    for (i in 0 until n / 2) {
+        if (ruta[i] != ruta[n - 1 - i]) {
+            espejo = false
+            break
+        }
+    }
+    println("Ruta espejo: $espejo (ruta=$ruta)")
+}
+
