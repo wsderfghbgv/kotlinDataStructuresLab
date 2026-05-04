@@ -95,3 +95,32 @@ fun reto6() {
     println("En comÃƒÂºn: $compartidos | Solo la primera persona: $soloA")
 }
 
+// --- Reto 7: Despensa MutableMap: consumir y eliminar si agota ---
+fun reto7() {
+    println("=== Reto 7: Inventario de despensa ===")
+    val despensa = mutableMapOf(
+        "arroz" to 2,
+        "frijoles" to 1,
+        "aceite" to 1
+    )
+    fun consumir(producto: String, cantidad: Int) {
+        val actual = despensa[producto] ?: run {
+            println("Alerta: no existe \"$producto\" en despensa.")
+            return
+        }
+        val restante = actual - cantidad
+        when {
+            restante > 0 -> despensa[producto] = restante
+            restante == 0 -> {
+                despensa.remove(producto)
+                println("Alerta: \"$producto\" se agotÃƒÂ³ y se quitÃƒÂ³ del mapa.")
+            }
+            else -> println("Alerta: no hay suficiente \"$producto\" (hay $actual, pediste $cantidad).")
+        }
+    }
+    consumir("arroz", 1)
+    consumir("frijoles", 1)
+    consumir("aceite", 2)
+    println("Estado final: $despensa")
+}
+
