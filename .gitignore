@@ -1,0 +1,14 @@
+# IntelliJ / Kotlin
+out/
+.idea/
+*.iml
+*.ipr
+*.iws
+.kotlin/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
