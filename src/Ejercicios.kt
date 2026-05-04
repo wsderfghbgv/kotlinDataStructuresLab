@@ -124,3 +124,18 @@ fun reto7() {
     println("Estado final: $despensa")
 }
 
+// --- Reto 8: Promedio ponderado con Pair<nota, peso> ---
+fun reto8() {
+    println("=== Reto 8: CÃƒÂ¡lculo de promedio acadÃƒÂ©mico ===")
+    val items = listOf(
+        4.5 to 0.3,
+        3.8 to 0.2,
+        4.2 to 0.5
+    )
+    var notaFinal = 0.0
+    for ((nota, peso) in items) {
+        notaFinal += nota * peso
+    }
+    println("Nota final ponderada: $notaFinal")
+}
+
