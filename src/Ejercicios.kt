@@ -450,3 +450,17 @@ fun reto26() {
     println("Resumen: $resumen")
 }
 
+// --- Reto 27: Vendedores por encima del promedio del equipo ---
+fun reto27() {
+    println("=== Reto 27: Premios a vendedores ===")
+    val ventas = mapOf("Ana" to 1200.0, "Luis" to 1500.0, "Marta" to 900.0, "Pedro" to 1600.0)
+    var total = 0.0
+    for (v in ventas.values) total += v
+    val promedio = total / ventas.size
+    val bonificados = mutableListOf<String>()
+    for ((nombre, monto) in ventas) {
+        if (monto > promedio) bonificados.add(nombre)
+    }
+    println("Promedio equipo: $promedio | Bonificados: $bonificados")
+}
+
