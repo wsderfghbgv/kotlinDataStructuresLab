@@ -479,3 +479,20 @@ fun reto28() {
     println("Costo 3 h: ${costoTotal(3)} | Costo 10 h: ${costoTotal(10)}")
 }
 
+// --- Reto 29: Dos maletas cuya suma de peso == objetivo ---
+fun reto29() {
+    println("=== Reto 29: Parejas de viaje por peso ===")
+    val pesos = listOf(12, 8, 15, 7, 20, 5)
+    val objetivo = 20
+    var pareja: Pair<Int, Int>? = null
+    outer@ for (i in pesos.indices) {
+        for (j in i + 1 until pesos.size) {
+            if (pesos[i] + pesos[j] == objetivo) {
+                pareja = pesos[i] to pesos[j]
+                break@outer
+            }
+        }
+    }
+    println("Objetivo $objetivo kg -> pareja: $pareja")
+}
+
