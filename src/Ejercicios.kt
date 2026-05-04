@@ -65,3 +65,23 @@ fun reto4() {
     println("Unidades por producto: $conteo")
 }
 
+// --- Reto 5: Invertir Array de URLs manualmente ---
+fun reto5() {
+    println("=== Reto 5: Historial de navegaciÃƒÂ³n reversible ===")
+    val urls = arrayOf(
+        "https://a.com",
+        "https://b.com",
+        "https://c.com",
+        "https://d.com",
+        "https://e.com"
+    )
+    val n = urls.size
+    for (i in 0 until n / 2) {
+        val j = n - 1 - i
+        val tmp = urls[i]
+        urls[i] = urls[j]
+        urls[j] = tmp
+    }
+    println("Historial invertido (simula \"AtrÃƒÂ¡s\" al recorrer): ${urls.joinToString()}")
+}
+
