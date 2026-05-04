@@ -380,3 +380,23 @@ fun reto23() {
     println("Diferencia vs promedio previo: $diferencias")
 }
 
+// --- Reto 24: ParÃƒÂ©ntesis balanceados en manifiesto ---
+fun reto24() {
+    println("=== Reto 24: OrganizaciÃƒÂ³n de contenedores ===")
+    fun balanceado(s: String): Boolean {
+        var nivel = 0
+        for (c in s) {
+            when (c) {
+                '(' -> nivel++
+                ')' -> {
+                    nivel--
+                    if (nivel < 0) return false
+                }
+            }
+        }
+        return nivel == 0
+    }
+    println("()(()) -> ${balanceado("()(())")}")
+    println("(() -> ${balanceado("(()")}")
+}
+
