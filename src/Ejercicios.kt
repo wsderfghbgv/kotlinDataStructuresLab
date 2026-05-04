@@ -40,3 +40,17 @@ fun reto2() {
     println("Nombres para capacitaciÃƒÂ³n especial: $nombresSenior")
 }
 
+// --- Reto 3: Contactos ÃƒÂºnicos con Set, ordenados ---
+fun reto3() {
+    println("=== Reto 3: Limpieza de contactos duplicados ===")
+    val telefonos = listOf(
+        "3001112233", "3004445566", "3001112233", "3007778899",
+        "3004445566", "3002223344", "3001112233", "3005556677",
+        "3008889900", "3002223344", "3003334455", "3006667788",
+        "3009990011", "3003334455", "3001212121", "3003434343",
+        "3001212121", "3005656565", "3007878787", "3009090909"
+    )
+    val unicosOrdenados = telefonos.toSortedSet()
+    println("Agenda sin duplicados (${unicosOrdenados.size}): $unicosOrdenados")
+}
+
