@@ -139,3 +139,16 @@ fun reto8() {
     println("Nota final ponderada: $notaFinal")
 }
 
+// --- Reto 9: Map ISO -> paÃƒÂ­s, mensaje por cada entrada ---
+fun reto9() {
+    println("=== Reto 9: Traductor de cÃƒÂ³digos de paÃƒÂ­s ===")
+    val codigos = mapOf(
+        "CO" to "Colombia",
+        "MX" to "MÃƒÂ©xico",
+        "AR" to "Argentina"
+    )
+    for ((iso, pais) in codigos) {
+        println("El cÃƒÂ³digo $iso pertenece a $pais")
+    }
+}
+
