@@ -305,3 +305,19 @@ fun reto19() {
     println("Top 10 tienda: $top10")
 }
 
+// --- Reto 20: Unir dos listas ordenadas sin .sort() ---
+fun reto20() {
+    println("=== Reto 20: UniÃƒÂ³n de agendas ordenadas ===")
+    val a = listOf("Ana", "Carlos", "Elena")
+    val b = listOf("Beatriz", "David", "Fernanda", "Gloria")
+    val fusion = mutableListOf<String>()
+    var i = 0
+    var j = 0
+    while (i < a.size && j < b.size) {
+        if (a[i] <= b[j]) fusion.add(a[i++]) else fusion.add(b[j++])
+    }
+    while (i < a.size) fusion.add(a[i++])
+    while (j < b.size) fusion.add(b[j++])
+    println("Lista maestra ordenada: $fusion")
+}
+
