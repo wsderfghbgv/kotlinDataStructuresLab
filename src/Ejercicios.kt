@@ -167,3 +167,18 @@ fun reto10(k: Int = 2) {
     println("Tras rotar:    $rotados")
 }
 
+// --- Reto 11: Maleta agrupada por peso (kg) -> Map<Int, List<String>> ---
+fun reto11() {
+    println("=== Reto 11: Organizador de maleta ===")
+    val objetos = listOf(
+        "camisa" to 1, "pantalÃƒÂ³n" to 2, "cepillo" to 1,
+        "libro" to 2, "cargador" to 1, "jersey" to 3,
+        "zapatos" to 3, "agua" to 1
+    )
+    val porPeso = mutableMapOf<Int, MutableList<String>>()
+    for ((nombre, kg) in objetos) {
+        porPeso.getOrPut(kg) { mutableListOf() }.add(nombre)
+    }
+    println("Agrupado por kg: $porPeso")
+}
+
