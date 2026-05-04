@@ -85,3 +85,13 @@ fun reto5() {
     println("Historial invertido (simula \"AtrÃƒÂ¡s\" al recorrer): ${urls.joinToString()}")
 }
 
+// --- Reto 6: Intereses en comÃƒÂºn y exclusivos del primero ---
+fun reto6() {
+    println("=== Reto 6: Compatibilidad de intereses ===")
+    val interesesA = setOf("cine", "senderismo", "cafÃƒÂ©", "lectura")
+    val interesesB = setOf("yoga", "cafÃƒÂ©", "cine", "viajes")
+    val compartidos = interesesA intersect interesesB
+    val soloA = interesesA subtract interesesB
+    println("En comÃƒÂºn: $compartidos | Solo la primera persona: $soloA")
+}
+
